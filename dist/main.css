@@ -106,6 +106,26 @@ section p.lead.price {
   font-size: 24px;
   font-weight: 700;
   padding: 15px 75px;
+  position: relative;
+}
+
+.btn.btn-arrow::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+  width: 18px;
+  opacity: 0;
+  transition: all 0.15s;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='#fff' d='M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+.btn.btn-arrow:hover::before {
+  right: 25px;
+  opacity: 1;
 }
 
 .btn-primary {
@@ -323,7 +343,7 @@ hr {
 }
 
 .form-check input[type="radio"] {
-  display: none;
+  opacity: 0;
 }
 
 .form-check label {
@@ -355,6 +375,12 @@ hr {
   left: 4px;
   top: 4px;
   background-color: #222;
+}
+
+.form-check input[type="radio"]:active + label::before,
+.form-check input[type="radio"]:focus + label::before {
+  box-shadow: 0 0 0 0.2rem #5D98D2;
+  border-color: #5D98D2;
 }
 
 .form-check input[type="radio"]:checked + label::after,
