@@ -123,13 +123,22 @@ section p.lead.price {
   background-repeat: no-repeat;
   background-position: 0 center;
 }
+
 .btn.btn-arrow:hover::before {
   right: 25px;
   opacity: 1;
 }
 
 .btn-primary {
-  background-color: #0c99d6;
+  background-color: #009cdd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #5279B3;
 }
 
 .btn-dark {
