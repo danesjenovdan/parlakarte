@@ -8,8 +8,10 @@ const safeAsync = fn => (...args) => fn(...args).catch(err => console.error('Asy
 
 const $ = selector => document.querySelector(selector);
 
+const SHOP_URL = 'https://shop.knedl.si';
+
 const shop = axios.create({
-  baseURL: 'https://shop.knedl.si/api',
+  baseURL: `${SHOP_URL}/api`,
 });
 
 const PRODUCT_ID = 8; // karte so id 8
@@ -72,7 +74,7 @@ async function checkout(data, orderKey) {
     params: { order_key: orderKey },
   });
   if (res.data.upn_id) {
-    const res2 = await axios.post('http://shop.knedl.si/poloznica/', res.data);
+    const res2 = await axios.post(`${SHOP_URL}/poloznica/`, res.data);
     if (res2 && res2.status === 200) {
       cookies.remove('order_key');
       window.location.href = `${data.success_url}?upn`;
