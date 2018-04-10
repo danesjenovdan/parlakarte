@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../main.css">
+  <title>Politični parket</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,500,700&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container my-2 d-none d-md-block">
+    <div class="row">
+      <footer class="col text-right my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="row">
+      <header class="col text-center mt-2 mb-3 mb-md-5 ml-md-3">
+        <h1 class="m-0 ml-md-3"><a href="../">POLITIČNI PARKET</a></h1>
+        <h2 class="m-0 ml-md-3">Parlamentarne igralne karte</h2>
+      </header>
+    </div>
+  </section>
+
+  <form class="js-order-form">
+
+    <section class="container-fluid bg-gray my-md-5">
+      <div class="row">
+        <div class="container">
+          <div class="row align-items-center py-5">
+            <div class="col-lg-7 sect-order-text pr-md-5 pb-4">
+              <p>Karte so trenutno v tisku. Dobiš jih takoj, ko jih dobimo mi, a to lahko traja še nekaj dni. Tudi mi jih že nestrpno čakamo in obljubljamo, da bodo kmalu, vsekakor pa najkasneje 16. aprila.</p>
+            </div>
+            <div class="col sect-order-box align-self-start">
+              <div class="box p-4 p-md-5">
+                <p>Povzetek naročila</p>
+                <div class="media">
+                  <img class="mr-3" src="../img/karte-sajt-order.png" width="80" height="80">
+                  <div class="media-body">
+                    <p class="m-0">Karte Politični parket</p>
+                    <div><strong>20€</strong></div>
+                    <p class="mt-2">
+                      Količina:
+                      <button class="btn btn-sm btn-dark js-button-minus" type="button">-</button>
+                      <input type="number" class="form-control form-control-sm text-center" value="1" min="1" name="kolicina" disabled>
+                      <button class="btn btn-sm btn-dark js-button-plus" type="button">+</button>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+                <p class="mt-4 mb-0"><strong>Skupaj: <span class="js-total-order">20</span>€</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col-md-8">
+              <label class="mb-4"><strong>Osebni podatki</strong></label>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" name="ime" placeholder="Ime in priimek" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" name="naslov" placeholder="Naslov" autocomplete="address-line1">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" name="naslov2" placeholder="Pošta in kraj" autocomplete="address-line2">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" autocomplete="email">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <hr class="my-5">
+            </div>
+            <div class="col-md-12">
+              <label class="mb-4"><strong>Način prevzema</strong></label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="prevzem" id="prevzem-post" value="post" checked>
+                <label class="form-check-label" for="prevzem-post">Prek Pošte Slovenije</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="prevzem" id="prevzem-office_pickup" value="office_pickup">
+                <label class="form-check-label" for="prevzem-office_pickup">Osebni prevzem v naši pisarni (Tobačna ulica 5, Hekovnik, Ljubljana)</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <hr class="my-5">
+            </div>
+            <div class="col-md-12">
+              <label class="mb-4"><strong>Način plačila</strong></label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="placilo" id="placilo-upn" value="upn" checked>
+                <label class="form-check-label" for="placilo-upn">Položnica</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="placilo" id="placilo-paypal" value="paypal">
+                <label class="form-check-label" for="placilo-paypal">Paypal ali kreditna kartica</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <hr class="my-5">
+            </div>
+            <div class="col-md-12">
+              <label class="mb-4"><strong>Sporočilo</strong></label>
+              <div class="form-group">
+                <textarea class="form-control form-control-lg" name="sporocilo" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group mt-5">
+                <input type="submit" class="btn btn-dark submit-order js-submit-button" value="ODDAJ NAROČILO">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </form>
+
+  <section class="container my-3 my-md-5">
+    <div class="row">
+      <footer class="col text-center my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <!-- js -->
+  <script src="../js/order.js"></script>
+</body>
+
+</html>

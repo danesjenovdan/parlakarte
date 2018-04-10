@@ -1,0 +1,366 @@
+body {
+  font-family: "Roboto Slab", serif;
+  color: #222;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #009cdd;
+}
+
+section header h1 a,
+section header h1 a:hover,
+section header h1 a:active,
+section header h1 a:visited {
+  color: #009cdd;
+  text-decoration: none;
+}
+
+header h2 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+@media (min-width: 768px) {
+  header.text-center {
+    text-align: left !important;
+  }
+
+  header h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  header h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+section h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+section p.lead {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+section p.lead.price {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  section h4 {
+    font-size: 50px;
+  }
+
+  section p,
+  section p.lead {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  section p.lead.price {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .support-parlameter-text h4 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .support-parlameter-text p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.bg-gray {
+  background-color: #efefef;
+}
+
+@media (min-width: 768px) {
+  .bg-md-gray {
+    background-color: #efefef;
+  }
+}
+
+.btn {
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 15px 75px;
+}
+
+.btn-primary {
+  background-color: #0c99d6;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+
+.order-button-container {
+  position: absolute;
+  left: -8px;
+  bottom: -80px;
+  z-index: 2;
+}
+
+.order-button-top-container a,
+.order-button-container a {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+@media (min-width: 768px) {
+  .order-button-container {
+    position: static;
+  }
+}
+
+.faq-qa,
+.faq-q,
+.faq-a {
+  margin: 0;
+}
+
+.faq-q {
+  padding: 1rem 0 0.5rem;
+}
+
+.faq-q a,
+.faq-q a:hover,
+.faq-q a:active,
+.faq-q a:visited {
+  color: #222;
+  text-decoration: none;
+}
+
+.faq-q a::before {
+  display: inline-block;
+  width: 1em;
+  font-weight: 700;
+  content: '+';
+}
+
+.faq-q a[aria-expanded="true"]::before {
+  content: '-';
+}
+
+.faq-a {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .faq-a {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+footer {
+  font-size: 12px;
+}
+
+section a,
+section a:hover,
+section a:active,
+section a:visited,
+footer a,
+footer a:hover,
+footer a:active,
+footer a:visited {
+  color: #222;
+  text-decoration: underline;
+}
+
+.sect-txt.card.card-body {
+  margin-top: -30px;
+  border: none;
+  border-radius: 0;
+  box-shadow: #000 0 60px 200px -50px;
+}
+
+.sect-txt.card.card-body h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  background: -webkit-gradient(linear, left top, right top, from(#009cdd), to(#ff5e41));
+  background: linear-gradient(to right, #009cdd 0%, #ff5e41 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .sect-txt.card.card-body {
+    flex-basis: 0;
+    padding: 75px 45px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 650px;
+    box-shadow: #000 0 20px 150px -60px;
+  }
+
+  .sect-txt.card.card-body h3 {
+    font-size: 70px;
+  }
+
+  .order-button-top-container {
+    width: auto;
+    position: absolute;
+    top: 295px;
+    left: 444px;
+  }
+}
+
+.sect-order-text p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.sect-order-box .box {
+  background-color: #e1e1e1;
+}
+
+@media (min-width: 992px) {
+  .sect-order-box .box {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+  }
+}
+
+.sect-order-box .box p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.sect-order-box .box .media p {
+  font-size: 14px;
+}
+
+.sect-order-box .box .media p input {
+  display: inline-block;
+  width: 50px;
+  vertical-align: baseline;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.sect-order-box .box .media p .btn-sm {
+  vertical-align: baseline;
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+
+hr {
+  border-top-color: #222;
+}
+
+.form-control {
+  border: 1px solid #222;
+  border-radius: 0;
+}
+
+.form-control.form-control-lg {
+  font-size: 18px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .btn.btn-dark.submit-order {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+/* radio */
+.form-check {
+  margin-bottom: 20px;
+}
+
+.form-check input[type="radio"] {
+  display: none;
+}
+
+.form-check label {
+  position: relative;
+  padding-left: 15px;
+}
+
+.form-check label::before,
+.form-check label::after {
+  display: none;
+  content: "";
+  position: absolute;
+  margin-left: -20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form-check label::before {
+  width: 24px;
+  height: 24px;
+  left: 0;
+  border: 1px solid #222;
+  background-color: #fff;
+}
+
+.form-check label::after {
+  width: 16px;
+  height: 16px;
+  left: 4px;
+  top: 4px;
+  background-color: #222;
+}
+
+.form-check input[type="radio"]:checked + label::after,
+.form-check label::before {
+  display: inline-block;
+}
+
+.thankyou-container p.lead {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .thankyou-container p,
+  .thankyou-container p.lead {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}

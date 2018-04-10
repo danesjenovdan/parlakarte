@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Politični parket</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container my-2 d-none d-md-block">
+    <div class="row">
+      <footer class="col text-right my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="row">
+      <header class="col text-center mt-2 mb-3 mb-md-5 ml-md-3">
+        <h1 class="m-0 ml-md-3">POLITIČNI PARKET</h1>
+        <h2 class="m-0 ml-md-3">Parlamentarne igralne karte</h2>
+      </header>
+    </div>
+  </section>
+
+  <section class="container py-md-5">
+    <div class="row position-relative">
+      <div class="col-md-7 offset-md-5 sect-img p-0">
+        <img class="img-fluid" src="img/karte-sajt-ilustracije_1.png" alt="">
+      </div>
+      <div class="col sect-txt ml-4 ml-md-0 card card-body">
+        <h3>Bodi v središču parlamentarnega dogajanja!</h3>
+      </div>
+      <div class="col sect-txt pl-0 order-button-top-container">
+        <a href="naroci/" class="btn btn-dark">NAROČI</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-md-5">
+    <div class="row align-items-center">
+      <div class="col sect-txt my-5 mx-2">
+        <h4>Primerjaj moči!</h4>
+        <p>Kliči izbrano statistiko svojega poslanca in preveri, če lahko premagaš nasprotnikovo karto.</p>
+      </div>
+      <div class="col-md-7 sect-img p-0 order-md-first">
+        <img class="img-fluid" src="img/karte-sajt-ilustracije_2.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-md-5">
+    <div class="row align-items-center">
+      <div class="col sect-txt my-5 mx-2">
+        <h4>Manevriraj!</h4>
+        <p>S posebnimi kartami, ki premešajo dogajanje, se posluži političnih manevrov.</p>
+      </div>
+      <div class="col-md-7 sect-img p-0">
+        <img class="img-fluid" src="img/karte-sajt-ilustracije_3.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-md-5">
+    <div class="row align-items-center">
+      <div class="col sect-txt my-5 mx-2">
+        <h4>Zmagaj!</h4>
+        <p>Pretresi politični parket s svojimi smelimi potezami, drugim igralcem poberi čimveč poslanskih kart in zmagaj!</p>
+      </div>
+      <div class="col-md-7 sect-img p-0 order-md-first">
+        <canvas class="img-fluid w-100" id="cardwin-canvas"></canvas>
+        <img id="cardwin-cards" src="img/karte/karte.png" style="display: none;">
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid bg-md-gray my-md-5">
+    <div class="row">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col sect-txt my-5 mx-2">
+            <p class="lead">
+              90 poslanskih kart<br>
+              20 kart političnih manevrov<br>
+              1 škatla
+            </p>
+            <p class="lead price mt-4 mb-5">20€</p>
+            <p class="order-button-container mb-0 mt-5">
+              <a href="naroci/" class="btn btn-primary">NAROČI</a>
+            </p>
+          </div>
+          <div class="col-md-6 sect-img p-0 order-md-first">
+            <img class="img-fluid" src="img/karte-sajt-ilustracije_5.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-md-5">
+    <div class="row align-items-center">
+      <div class="col sect-txt support-parlameter-text my-5 mx-2">
+        <h4 class="mb-5 mr-md-5">Z nakupom podpiraš delovanje <a href="https://parlameter.si" target="_blank">Parlametra</a> in inštituta <a href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>.</h4>
+        <p class="mr-md-5">Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.</p>
+      </div>
+      <div class="col-md sect-img p-0">
+        <img class="img-fluid" src="img/karte-sajt-ilustracije_6.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid bg-gray my-md-5">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col sect-txt my-5 mx-2">
+            <h4 class="mb-4">FAQ</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-1" aria-controls="faq-1">Zakaj so karte tako drage?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-1">Ker ne gre le za nakup izdelka, pač pa za podporo delovanja Danes je nov dan in Parlametra. Poleg tega gre za posebno edicijo majhne naklade. Stroški izdelave Političnega parketa so višji od cene podobnih kart, ki se oblikujejo enotno za številne trge in prilagajajo le s prevodi.</p>
+                </div>
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-2" aria-controls="faq-2">Zakaj bi bi vas podprl/-a?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-2">Ker delamo neprofitne in odprtokodne projekte, ki izboljšujejo državljansko uporabniško izkušnjo, z inovativnimi spletnimi prijemi opozarjamo na pomembne teme, amplificiramo marginalizirane glasove, kritično premišljamo in osmišljamo javni prostor, in razvijamo lastna programska orodja in digitalne aplikacije. <a href="https://danesjenovdan.si/projekti/" target="_blank">Več</a>.</p>
+                </div>
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-3" aria-controls="faq-3">Od kod vam podatki na kartah?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-3">Podatki so od začetka sklica 1. 8. 2014 do 28. 3. 2018, kar je tik pred (predčasnim) koncem mandata, in so dostopni na spletnem mestu Parlametra.</p>
+                </div>
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-4" aria-controls="faq-4">Zakaj primerjati poslance in ne raje formul?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-4">Ker je bolj pomembno, da imaš vpogled v parlamentarne kot avtomobilske statistike. Ker boš spoznal/-a tudi tiste poslance, ki niso v prvem planu, in morda sploh ne veš, kdo so. Ker si boš o njih lahko ustvaril/-a sliko na podlagi dejstev o njihovi udeležbi na sejah, izgovorjenih besedah, izobrazbi itn.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-5" aria-controls="faq-5">Lahko karte kupim kot darilo?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-5">Seveda. Račun bomo poslali tebi, karte pa na naslov obdarovanca/-ke. Lahko si izbereš tudi datum, ko želiš, da jih prejme.</p>
+                </div>
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-6" aria-controls="faq-6">Lahko prilagodim pravila?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-6">Zakaj pa ne?</p>
+                </div>
+                <div class="faq-qa">
+                  <p class="faq-q">
+                    <a data-toggle="collapse" role="button" aria-expanded="false" href="#faq-7" aria-controls="faq-7">Imam super idejo za izboljšanje igre, kam jo lahko posredujem?</a>
+                  </p>
+                  <p class="faq-a collapse" id="faq-7">Igro smo koncipirali skupinsko; preigravali smo različne verzije pravil, preizkušali raznolike manevre, se prepirali o podrobnostih in po dolgem procesu zakoličili obstoječa pravila. Delovni proces se bo ponovil konec naslednjega (8.) sklica DZ. Naša pisarna in Slack sta vedno odprta za nove sodelavce/-ke - le glej, da boš takrat med njimi <a href="https://danesjenovdan.si/dolzni/#popup-naturalijepopup" target="_blank">tudi ti</a>!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-3 my-md-5">
+    <div class="row">
+      <footer class="col text-center my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <!-- js -->
+  <script src="js/landing.js"></script>
+</body>
+
+</html>

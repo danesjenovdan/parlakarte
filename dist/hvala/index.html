@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../main.css">
+  <title>Politični parket</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,500,700&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container my-2 d-none d-md-block">
+    <div class="row">
+      <footer class="col text-right my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="row">
+      <header class="col text-center mt-2 mb-3 mb-md-5 ml-md-3">
+        <h1 class="m-0 ml-md-3"><a href="../">POLITIČNI PARKET</a></h1>
+        <h2 class="m-0 ml-md-3">Parlamentarne igralne karte</h2>
+      </header>
+    </div>
+  </section>
+
+  <section class="container-fluid bg-gray my-md-5">
+    <div class="row">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-6">
+            <img class="img-fluid" src="../img/karte-sajt-ilustracije_5.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid my-4 my-md-5 pb-md-5">
+    <div class="row">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-8 text-center thankyou-container">
+            <p class="lead mb-4">Hvala za tvoje naročilo, s katerim podpiraš delovanje Danes je nov dan in Parlametra. </p>
+            <p>Želimo ti obilo užitkov v vlogi poslanca ali poslanke ter čimveč uspešno izvedenih političnih manevrov.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-3 my-md-5">
+    <div class="row">
+      <footer class="col text-center my-2">
+        <a class="mr-5" href="https://danesjenovdan.si" target="_blank">Danes je nov dan</a>
+        <a href="https://parlameter.si" target="_blank">Parlameter</a>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var upn = 'Karte ti pošljemo takoj, ko pridejo iz tiskarne, in ko plačaš položnico, ki jo dobiš po e-pošti.';
+      var paypal = 'Karte ti pošljemo takoj, ko pridejo iz tiskarne.';
+      var element = document.querySelector('.thankyou-container p.lead');
+      element.textContent += (window.location.search === '?upn' ? upn : paypal);
+    })();
+  </script>
+</body>
+
+</html>
