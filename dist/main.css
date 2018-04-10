@@ -64,13 +64,13 @@ section p.lead.price {
 
 @media (min-width: 768px) {
   section h4 {
-    font-size: 50px;
+    font-size: 26px;
   }
 
   section p,
   section p.lead {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   section p.lead.price {
@@ -142,7 +142,7 @@ section p.lead.price {
 }
 
 .faq-q {
-  padding: 1rem 0 0.5rem;
+  padding: 1.5rem 0 0.25rem;
 }
 
 .faq-q a,
@@ -151,11 +151,17 @@ section p.lead.price {
 .faq-q a:visited {
   color: #222;
   text-decoration: none;
+  position: relative;
+  padding-left: 1.5rem;
+  display: inline-block;
 }
 
 .faq-q a::before {
   display: inline-block;
-  width: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
   font-weight: 700;
   content: '+';
 }
@@ -168,6 +174,7 @@ section p.lead.price {
   font-size: 12px;
   line-height: 16px;
   font-weight: 300;
+  padding-left: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -289,6 +296,11 @@ hr {
 .form-control {
   border: 1px solid #222;
   border-radius: 0;
+}
+
+.form-control:focus {
+  border-color: #5D98D2;
+  box-shadow: 0 0 0 0.2rem #5D98D2;
 }
 
 .form-control.form-control-lg {

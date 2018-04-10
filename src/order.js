@@ -9,7 +9,7 @@ const safeAsync = fn => (...args) => fn(...args).catch(err => console.error('Asy
 const $ = selector => document.querySelector(selector);
 
 const shop = axios.create({
-  baseURL: 'http://shop.knedl.si/api',
+  baseURL: 'https://shop.knedl.si/api',
 });
 
 const PRODUCT_ID = 8; // karte so id 8
