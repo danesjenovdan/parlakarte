@@ -144,7 +144,7 @@ safeAsync(async () => {
       delivery_method: delivery.value,
       subscription: false,
       info: message.value,
-      success_url: `${window.location.origin}/hvala/`,
+      success_url: `${window.location.origin}${window.location.pathname}hvala/`,
       fail_url: window.location.href,
     };
 
