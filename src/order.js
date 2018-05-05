@@ -8,7 +8,7 @@ const safeAsync = fn => (...args) => fn(...args).catch(err => console.error('Asy
 
 const $ = selector => document.querySelector(selector);
 
-const SHOP_URL = 'https://shop.knedl.si';
+const SHOP_URL = 'https://shop.djnd.si';
 
 const shop = axios.create({
   baseURL: `${SHOP_URL}/api`,
