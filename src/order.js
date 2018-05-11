@@ -3,6 +3,7 @@ import 'core-js/modules/es6.array.find';
 import cookies from 'js-cookie';
 import axios from 'axios';
 
+/* globals gtag:false */
 // eslint-disable-next-line no-console
 const safeAsync = fn => (...args) => fn(...args).catch(err => console.error('Async Error', err));
 
@@ -13,6 +14,28 @@ const SHOP_URL = 'https://shop.djnd.si';
 const shop = axios.create({
   baseURL: `${SHOP_URL}/api`,
 });
+
+function sendConversion(price, callback) {
+  gtag('event', 'conversion', {
+    send_to: 'AW-809174714/xSraCMnfs4IBELqN7IED',
+    value: price,
+    currency: 'USD',
+    transaction_id: '',
+    event_callback: callback,
+  });
+}
+
+function withTimeout(callback, timeout = 1000) {
+  let called = false;
+  function fn() {
+    if (!called) {
+      called = true;
+      callback();
+    }
+  }
+  setTimeout(fn, timeout);
+  return fn;
+}
 
 const PRODUCT_ID = 8; // karte so id 8
 
@@ -64,23 +87,61 @@ async function updateBasket(basketId, quantity, orderKey) {
     params: { order_key: orderKey },
   });
   if (res && res.data) {
+    gtag('event', 'update_basket', {
+      value: res.data.quantity,
+    });
     return [res.data.quantity, basketId];
   }
   return [0, basketId];
 }
 
+function setButtonError() {
+  const button = $('.js-submit-button');
+  button.textContent = 'Napaka :(';
+  button.className = button.className.replace('loading', '');
+}
+
 async function checkout(data, orderKey) {
-  const res = await shop.post('/checkout/', data, {
-    params: { order_key: orderKey },
-  });
-  if (res.data.upn_id) {
-    const res2 = await axios.post(`${SHOP_URL}/poloznica/`, res.data);
-    if (res2 && res2.status === 200) {
+  try {
+    const price = Number($('.js-total-order').textContent);
+    const res = await shop.post('/checkout/', data, {
+      params: { order_key: orderKey },
+    });
+    if (res.data.upn_id) {
+      const res2 = await axios.post(`${SHOP_URL}/poloznica/`, res.data);
+      if (res2 && res2.status === 200) {
+        cookies.remove('order_key');
+        gtag('event', 'checkout_success_upn', {
+          event_callback: withTimeout(() => {
+            sendConversion(price, withTimeout(() => {
+              window.location.href = `${data.success_url}?upn`;
+            }));
+          }),
+        });
+      } else {
+        gtag('event', 'checkout_failed_poloznica');
+        setButtonError();
+      }
+    } else if (res.data.redirect_url) {
       cookies.remove('order_key');
-      window.location.href = `${data.success_url}?upn`;
+      gtag('event', 'checkout_success_paypal', {
+        event_callback: withTimeout(() => {
+          sendConversion(price, withTimeout(() => {
+            window.location.href = `${res.data.redirect_url}`;
+          }));
+        }),
+      });
+    } else {
+      gtag('event', 'checkout_failed');
+      setButtonError();
     }
-  } else if (res.data.redirect_url) {
-    window.location.href = `${res.data.redirect_url}`;
+  } catch (error) {
+    gtag('event', 'checkout_failed');
+    gtag('event', 'exception', {
+      description: error,
+      fatal: true,
+    });
+    setButtonError();
   }
 }
 
@@ -124,10 +185,12 @@ safeAsync(async () => {
     showPrice(quantity, price);
   });
 
-  $('.js-order-form').addEventListener('submit', async (event) => {
+  $('.js-order-form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-    $('.js-submit-button').disabled = true;
+    const button = $('.js-submit-button');
+    button.disabled = true;
+    button.className += ' loading';
 
     const name = $('input[name="ime"]');
     const address = $('input[name="naslov"]');
@@ -150,7 +213,7 @@ safeAsync(async () => {
       fail_url: window.location.href,
     };
 
-    await checkout(data, orderKey);
+    checkout(data, orderKey);
   });
 })();
 
