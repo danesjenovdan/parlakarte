@@ -210,7 +210,8 @@ safeAsync(async () => {
     const payment = $('input[name="placilo"]:checked');
     const message = $('textarea[name="sporocilo"]');
 
-    if (!name.trim() || !address.trim() || !address2.trim() || !email.trim()) {
+    if (!name.value.trim() || !address.value.trim() ||
+        !address2.value.trim() || !email.value.trim()) {
       // eslint-disable-next-line no-alert
       return alert('Prosim izpolni polja za ime, naslov in e-pošto!');
     }
