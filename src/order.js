@@ -129,6 +129,8 @@ async function checkout(data, orderKey) {
           }),
         });
       } else {
+        console.log('res', res);
+        console.log('res2', res2);
         gtag('event', 'checkout_failed_poloznica');
         setButtonError();
       }
@@ -142,6 +144,7 @@ async function checkout(data, orderKey) {
         }),
       });
     } else {
+      console.log('res', res);
       gtag('event', 'checkout_failed');
       setButtonError();
     }
@@ -151,6 +154,7 @@ async function checkout(data, orderKey) {
       description: error,
       fatal: true,
     });
+    console.log('error', error);
     setButtonError();
   }
 }
@@ -229,7 +233,7 @@ safeAsync(async () => {
       fail_url: window.location.href,
     };
 
-    checkout(data, orderKey);
+    return checkout(data, orderKey);
   });
 })();
 
