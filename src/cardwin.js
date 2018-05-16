@@ -184,12 +184,13 @@ function startAnimation(deck) {
   const animation = new Animation(cardAnimations);
   // Start updating the animation
   let last = null;
-  window.requestAnimationFrame(function update(now) {
+  const raf = window.requestAnimationFrame || (f => window.setTimeout(() => f(Date.now()), 33));
+  raf(function update(now) {
     const delta = now - (last == null ? now : last);
     last = now;
     // Continue animating if there are cards left
     if (animation.update(delta)) {
-      window.requestAnimationFrame(update);
+      raf(update);
     } else {
       setTimeout(() => {
         // eslint-disable-next-line no-use-before-define

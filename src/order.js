@@ -9,6 +9,16 @@ const safeAsync = fn => (...args) => fn(...args).catch(err => console.error('Asy
 
 const $ = selector => document.querySelector(selector);
 
+// fix placeholder in IE
+if (!('placeholder' in document.createElement('input'))) {
+  const inputs = document.querySelectorAll('input[placeholder]');
+  for (let i = 0; i < inputs.length; i += 1) {
+    const newEl = document.createElement('div');
+    newEl.textContent = inputs[i].getAttribute('placeholder');
+    inputs[i].parentElement.insertBefore(newEl, inputs[i]);
+  }
+}
+
 const SHOP_URL = 'https://shop.djnd.si';
 
 const shop = axios.create({
@@ -199,6 +209,11 @@ safeAsync(async () => {
     const delivery = $('input[name="prevzem"]:checked');
     const payment = $('input[name="placilo"]:checked');
     const message = $('textarea[name="sporocilo"]');
+
+    if (!name.trim() || !address.trim() || !address2.trim() || !email.trim()) {
+      // eslint-disable-next-line no-alert
+      return alert('Prosim izpolni polja za ime, naslov in e-pošto!');
+    }
 
     const data = {
       payment_type: payment.value,

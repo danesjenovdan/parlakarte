@@ -246,6 +246,13 @@ footer a:visited {
   -webkit-text-fill-color: transparent;
 }
 
+/* ie 10 and 11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .sect-txt.card.card-body h3 {
+    background:#fff;
+  }
+}
+
 @media (min-width: 768px) {
   .sect-txt.card.card-body {
     flex-basis: 0;
@@ -299,6 +306,16 @@ footer a:visited {
   display: inline-block;
   width: 50px;
   vertical-align: baseline;
+}
+
+/* ie 9 */
+@media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+  .sect-order-box {
+    width: 33% \9;
+    position: absolute \9;
+    top: 350px \9;
+    right: 100px \9;
+  }
 }
 
 input[type='number'] {
@@ -465,4 +482,9 @@ hr {
 
 .has-cookie-consent .cookie-container {
   display: none;
+}
+
+canvas#cardwin-canvas {
+  /* ie 9 and 10 */
+  min-height:368px \9;
 }
