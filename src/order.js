@@ -202,10 +202,6 @@ safeAsync(async () => {
   $('.js-order-form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const button = $('.js-submit-button');
-    button.disabled = true;
-    button.className += ' loading';
-
     const name = $('input[name="ime"]');
     const address = $('input[name="naslov"]');
     const address2 = $('input[name="naslov2"]');
@@ -219,6 +215,10 @@ safeAsync(async () => {
       // eslint-disable-next-line no-alert
       return alert('Prosim izpolni polja za ime, naslov in e-pošto!');
     }
+
+    const button = $('.js-submit-button');
+    button.disabled = true;
+    button.className += ' loading';
 
     const data = {
       payment_type: payment.value,
